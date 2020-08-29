@@ -9,7 +9,7 @@ def logistic_reg(X,y):
   score = f1_score(y_test, prediction, average='macro')
   #save model
   dump(lr, 'logistic_reg.joblib')
-  return prediction , y_train , score
+  return (prediction , y_train , score)
 
 
 def xg_boost(X , y):
@@ -30,7 +30,7 @@ def xg_boost(X , y):
   score = f1_score(y_test, preds, average='macro')
   #save model
   dump(xg_reg, 'xg_boost.joblib')
-  return preds , cv_results , score
+  return (preds , cv_results , score)
 
 def multi_layer_percep(X , y):
   """
@@ -43,4 +43,4 @@ def multi_layer_percep(X , y):
   score = f1_score(y_test, preds, average='macro')
   #save model
   dump(clf, 'xg_boost.joblib')
-  return  preds ,y_train , score
+  return  (preds ,y_train , score) 
