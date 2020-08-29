@@ -39,18 +39,21 @@ It consists of the following columns:
 To prepare the data for the algorithms , a Principal component approach is applied on the data which has been encoded using onehot encoding
 
 The methods applied include a Logistic Regression algorithm , a Gradient Booster algorithm , and a mulitilayer feed forward neural network using k-fold cross validation to continously correct the error on the previous training set. 
-To identify the best model , a score of 
+To identify the best model , the f1 score is useful as the target data is has an imbalanced distribution 
 
 ## Problems
 
-The problems with this approach is the use of k-fold cross validation
-## Limitations
+The problems with this approach is the use of k-fold cross validation. 
+This is because the data is heavily imbalanced and could lead to da division by 0 error as explained here:
+https://sebastianraschka.com/faq/docs/computing-the-f1-score.html
+
+This can be addressed by using a stratified fold instead of a k-fold validation approach
 
 ## Conclusions
-
+From the evaluation of the performance , the multilayer perceptron is the best model for this problem and answers appropriately which kind of customer is likely to subscribe >.5 of the time . 
 # How to run
 1. Download as zip folder
 2. Extract and navigate to folder 
-	`cd Term_deposits_uptake_predictor
+	`cd Term_deposits_uptake_predictor`
 3. Run the module:
- ` python3 main.py
+ ` python3 main.py`
