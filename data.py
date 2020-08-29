@@ -80,9 +80,9 @@ def pca_reduction(df , components):
   """
   """
   feat_cols = df.columns.tolist()
-  pca = PCA(n_components=components).fit(df)
-  var_exp = pca.explained_variance_ratio_
+  pca_data = PCA(n_components=components).fit(df)
+  var_exp = pca_data.explained_variance_ratio_
   #apply the dimensionality reduction
-  transformed = pca.transform(df)
+  transformed = pca_data.transform(df)
   
   return transformed
